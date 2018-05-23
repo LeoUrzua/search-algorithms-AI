@@ -1,5 +1,6 @@
 from SearchByDepth import find_by_deep
 from SearchByBreadth import find_breadth_path
+from InformedSearchByAHeuristic import find_by_heuristic_a
 
 def swap(difference, parent):
     tb = list(parent)
@@ -78,8 +79,12 @@ if __name__ == '__main__':
     if generate_game():
         depth_route = find_by_deep(game, first, last)
         breadth_route = find_breadth_path(game, first, last)
+        print("\n---------------------\nSearch by depth\n---------------------")
         print("shortest path by depth: ", depth_route)
-        print("shortest path by breadth: ", depth_route)
+        print("\n---------------------\nSearch by breadth\n---------------------")
+        print("shortest path by breadth: ", breadth_route)
+        print("\n---------------------\nInformed search A*\n---------------------")
+        informed_search_a = find_by_heuristic_a(game, first, last)
 
 
     else:
