@@ -1,5 +1,5 @@
 from SearchByDepth import find_by_deep
-
+from SearchByBreadth import find_breadth_path
 
 def swap(difference, parent):
     tb = list(parent)
@@ -77,7 +77,10 @@ if __name__ == '__main__':
     game = {table: []}
     if generate_game():
         depth_route = find_by_deep(game, first, last)
-        print("shortest path: ", depth_route)
+        breadth_route = find_breadth_path(game, first, last)
+        print("shortest path by depth: ", depth_route)
+        print("shortest path by breadth: ", depth_route)
+
 
     else:
         print("This target can't exist")
