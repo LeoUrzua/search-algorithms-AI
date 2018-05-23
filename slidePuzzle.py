@@ -62,7 +62,7 @@ def print_game():
 
 
 def generate_game():
-    n_possible_state = 181440
+    n_possible_state = 181440   # this is the maximum possible different combinations
     for i in range(n_possible_state):
         f(parents[i].index(white_space), parents[i])
         if parents[i] == last:
@@ -72,10 +72,10 @@ def generate_game():
 
 if __name__ == '__main__':
     white_space = "*"
-    first = "2831647*5"
+    first = "2831647*5"         # Initial state
     table = first
     parents = [table]
-    last = "123*84765"
+    last = "123*84765"          # target
     game = {table: []}
     if generate_game():
         depth_route = find_by_deep(game, first, last)
