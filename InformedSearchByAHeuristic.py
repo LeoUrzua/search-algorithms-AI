@@ -21,5 +21,5 @@ def similarity(current, end):
     sim = 0
     for i in current:
         if current.index(i) == end.index(i):
-            sim = sim +1
+            sim = sim + 1
     return sim
